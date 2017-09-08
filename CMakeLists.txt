@@ -10,8 +10,6 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 	MESSAGE(STATUS "G++ system/compiler detected")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
-	SET(THIRD_PARTY_LIBS ${THIRD_PARTY_LIBS}
-	)
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
 		MESSAGE(STATUS "Intel system/compiler detected")
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL ${MSVC})
@@ -22,6 +20,7 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL ${MSVC})
 	)
 
 	SET(SFML_ROOT "C:/Libraries/SFML-2.4.2")
+	SET(SFML_STATIC_LIBRARIES TRUE)
 
 endif()
 
@@ -31,7 +30,6 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 # Currently always making static LOCAL_LIBS and linking to static SFML
 SET(LIBRARY_EXTENSION "${LIBRARY_EXTENSION}-s")
-SET(SFML_STATIC_LIBRARIES TRUE)
 
 # Determine what type of library (Debug/Release) to build
 if (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -45,7 +43,7 @@ endif()
 
 INCLUDE(${CMAKE_SOURCE_DIR}/ProjectFiles.cmake)
 
-FIND_PACKAGE(SFML 2 REQUIRED graphics window network audio system)
+FIND_PACKAGE(SFML 2 REQUIRED graphics window system)
 IF(NOT SFML_FOUND)
 	MESSAGE( FATAL_ERROR "Could not find SFML 2.X" )
 ENDIF()
