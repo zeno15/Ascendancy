@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+language: cpp
+
+compiler:
+  - gcc
+
+before_install:
+  - bash scripts/install_sfml.sh
+
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+    - clang
+    - glew-utils
+    - libglew-dev
+    - libudev-dev
+    - libjpeg-dev
+
+
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ./Test
