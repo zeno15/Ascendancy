@@ -23,7 +23,7 @@ namespace asc {
 		return false;
 	}
 	sf::Font& FontManager::getFont(const std::string& _fontName) {
-		auto& iter = m_Fonts.find(_fontName);
+		auto iter = m_Fonts.find(_fontName);
 		assert(iter != m_Fonts.end());
 
 		return *(*iter).second;

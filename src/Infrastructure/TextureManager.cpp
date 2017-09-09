@@ -26,7 +26,7 @@ namespace asc {
 	}
 
 	sf::Texture& TextureManager::getTexture(const std::string& _textureName) {
-		auto& iter = m_Textures.find(_textureName);
+		auto iter = m_Textures.find(_textureName);
 		assert(iter != m_Textures.end());
 
 		return *(*iter).second;
