@@ -1,13 +1,18 @@
 # Entity Framework
 SET(ENTITY_FRAMEWORK_HEADER_FILES ${ENTITY_FRAMEWORK_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/Entity.hpp
+	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityEvent.hpp
+	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityManager.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityRepresentation.hpp
+	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityRepresentationManager.hpp
 
 	${CMAKE_SOURCE_DIR}/include/EntityFramework.hpp
 )
 SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/Entity.cpp
+	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityManager.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentation.cpp
+	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentationManager.cpp
 )
 
 # Utility
