@@ -4,11 +4,11 @@ PROJECT(Ascendancy)
 
 IF (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
 	MESSAGE(STATUS "Clang system/compiler detected")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
 
 ELSEIF (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 	MESSAGE(STATUS "G++ system/compiler detected")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 ELSEIF (${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
 	MESSAGE(STATUS "Intel system/compiler detected")
