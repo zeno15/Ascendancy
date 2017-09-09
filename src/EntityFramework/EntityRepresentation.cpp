@@ -2,7 +2,8 @@
 
 namespace asc {
 	EntityRepresentation::EntityRepresentation(std::shared_ptr<Entity> _entity) :
-		m_Entity(_entity) {
+		m_Entity(_entity),
+		EntityId(_entity->Id) {
 		m_EntityEventCallbackHandle = m_Entity->OnEntityEvent.registerCallback(std::bind(&EntityRepresentation::HandleEntityEvent, this, std::placeholders::_1));
 	}
 	EntityRepresentation::~EntityRepresentation(void) {

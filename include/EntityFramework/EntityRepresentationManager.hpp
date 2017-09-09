@@ -12,8 +12,8 @@ namespace asc {
 		EntityRepresentationManager(void);
 		~EntityRepresentationManager(void);
 
-		void registerEntity(std::shared_ptr<Entity> _entity);
-		void unregisterEntity(std::shared_ptr<Entity> _entity);
+		void handleRegisterEntity(std::shared_ptr<Entity> _entity);
+		void handleUnregisterEntity(unsigned int _id);
 
 	private:
 		std::vector<std::unique_ptr<EntityRepresentation>> m_Representations;

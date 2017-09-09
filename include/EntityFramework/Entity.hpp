@@ -14,6 +14,8 @@ namespace asc {
 
 		Signal<const EntityEvent&> OnEntityEvent;
 
+		virtual void update(float _delta) = 0;
+
 	private:
 	};
 }

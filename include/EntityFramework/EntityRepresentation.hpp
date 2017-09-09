@@ -13,6 +13,8 @@ namespace asc {
 
 		virtual void HandleEntityEvent(const EntityEvent& _event);
 
+		const int EntityId;
+
 	protected:
 		std::shared_ptr<Entity> m_Entity;
 		int m_EntityEventCallbackHandle;
