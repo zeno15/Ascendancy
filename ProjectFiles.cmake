@@ -17,9 +17,20 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 
 # Infrastructure
 SET(INFRASTRUCURE_HEADER_FILES ${INFRASTRUCURE_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/Application.hpp
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/FontManager.hpp
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/Scene.hpp
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/SceneManager.hpp
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/TextureManager.hpp
+
 	${CMAKE_SOURCE_DIR}/include/Infrastructure.hpp
 )
 SET(INFRASTRUCTURE_SOURCE_FILES ${INFRASTRUCTURE_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/Application.cpp
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/FontManager.cpp
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/Scene.cpp
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/SceneManager.cpp
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/TextureManager.cpp
 )
 
 # Utility
@@ -34,7 +45,6 @@ SET(UTILITY_SOURCE_FILES ${UTILITY_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/Utility/StringHelpers.cpp
 	${CMAKE_SOURCE_DIR}/src/Utility/XML.cpp
 )
-
 
 # Test
 SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
