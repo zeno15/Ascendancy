@@ -11,7 +11,7 @@ namespace asc {
 	class Application {
 	public:
 		static Application& getInstance(void) {
-			static Application& app = Application();
+			static Application app;
 			return app;
 		}
 
