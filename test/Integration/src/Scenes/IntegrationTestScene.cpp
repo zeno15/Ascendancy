@@ -1,7 +1,5 @@
 #include <Scenes/IntegrationTestScene.hpp>
 
-#include <cmath>
-
 namespace asc {
 	IntegrationTestScene::IntegrationTestScene(void) 
 		: Scene("IntegrationTestScene") {
@@ -52,11 +50,11 @@ namespace asc {
 
 		if (_event.type == sf::Event::MouseWheelMoved) {
 			if (_event.mouseWheel.delta > 0) {
-				Application::getCamera().zoom(std::pow(1.1f, std::fabsf(static_cast<float>(_event.mouseWheel.delta))));
+				Application::getCamera().zoom(pow(1.1f, fabsf(static_cast<float>(_event.mouseWheel.delta))));
 				return true;
 			}
 			if (_event.mouseWheel.delta < 0) {
-				Application::getCamera().zoom(std::pow(1.0f / 1.1f, std::fabsf(static_cast<float>(_event.mouseWheel.delta))));
+				Application::getCamera().zoom(pow(1.0f / 1.1f, fabsf(static_cast<float>(_event.mouseWheel.delta))));
 				return true;
 			}
 		}
