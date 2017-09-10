@@ -16,16 +16,19 @@ namespace asc {
 
 		srand(static_cast<unsigned int>(time(nullptr)));
 
-		m_Window.create(sf::VideoMode(1280, 720), "Ascendancy");
+		m_Window.create(sf::VideoMode(1280, 720), "Ascendancy", sf::Style::Close | sf::Style::Titlebar);
 		m_Window.setVerticalSyncEnabled(true);
+		m_Camera.setCenterOffset(sf::Vector2f(m_Window.getSize()) / 2.0f);
+		m_Camera.setSize(sf::Vector2f(m_Window.getSize()));
 
 #ifdef _DEBUG
-#ifdef WIN32_LEAN_AND_MEAN
-		m_FontManager.loadFont("C:/Windows/Fonts/arial.ttf", "Arial");
+#ifdef ASC_WIN32
+		m_FontManager.loadFont("C:/Windows/Fonts/arial.ttf", "DEBUG");
 #endif
 #endif
 
 	}
+
 	void Application::start(void) {
 		if (!m_IsInitialised) {
 			throw std::runtime_error("Must initialise Application before starting.");
@@ -33,7 +36,7 @@ namespace asc {
 
 #ifdef _DEBUG
 		m_FPSText.setCharacterSize(16);
-		m_FPSText.setFont(m_FontManager.getFont("Arial"));
+		m_FPSText.setFont(m_FontManager.getFont("DEBUG"));
 		m_FPSText.setFillColor(sf::Color::Yellow);
 		m_FPSText.setString("FPS: 60, UPS: 60");
 #endif
@@ -49,8 +52,8 @@ namespace asc {
 
 		while (m_Running) {
 			float frameTime = clock.restart().asSeconds();
-			if (frameTime > 0.25f) {
-				frameTime = 0.25f;
+			if (frameTime > 0.5f) {
+				frameTime = 0.5f;
 			}
 
 			accumulator += frameTime;
@@ -75,8 +78,7 @@ namespace asc {
 				// Update
 				update(delta);
 				ups++;
-
-
+				
 				accumulator -= delta;
 			}
 
@@ -101,13 +103,17 @@ namespace asc {
 	}
 	void Application::render(void) {
 		m_Window.clear(sf::Color::Black);
+		
+		m_Window.setView(sf::View(m_Camera.getPosition(), m_Camera.getSize()));
 
 		m_SceneManager.draw(m_Window, sf::RenderStates::Default);
 
+		m_Window.setView(sf::View(m_Camera.getSize() / 2.0f, m_Camera.getSize()));
 
 #ifdef _DEBUG
-		m_Window.draw(m_FPSText);
+		m_Window.draw(m_FPSText, sf::RenderStates::Default);
 #endif
+
 		m_Window.display();
 	}
 }

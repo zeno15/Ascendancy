@@ -5,6 +5,7 @@ SET(ENTITY_FRAMEWORK_HEADER_FILES ${ENTITY_FRAMEWORK_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityManager.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityRepresentation.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityRepresentationManager.hpp
+	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityResource.hpp
 
 	${CMAKE_SOURCE_DIR}/include/EntityFramework.hpp
 )
@@ -13,10 +14,12 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityManager.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentation.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentationManager.cpp
+	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityResource.cpp
 )
 
 # Infrastructure
 SET(INFRASTRUCURE_HEADER_FILES ${INFRASTRUCURE_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/Infrastructure/Camera2D.hpp
 	${CMAKE_SOURCE_DIR}/include/Infrastructure/Application.hpp
 	${CMAKE_SOURCE_DIR}/include/Infrastructure/FontManager.hpp
 	${CMAKE_SOURCE_DIR}/include/Infrastructure/Scene.hpp
@@ -26,6 +29,7 @@ SET(INFRASTRUCURE_HEADER_FILES ${INFRASTRUCURE_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/Infrastructure.hpp
 )
 SET(INFRASTRUCTURE_SOURCE_FILES ${INFRASTRUCTURE_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/Infrastructure/Camera2D.cpp
 	${CMAKE_SOURCE_DIR}/src/Infrastructure/Application.cpp
 	${CMAKE_SOURCE_DIR}/src/Infrastructure/FontManager.cpp
 	${CMAKE_SOURCE_DIR}/src/Infrastructure/Scene.cpp
@@ -56,6 +60,14 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
     ${CMAKE_SOURCE_DIR}/test/Utility/SignalTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/StringHelpersTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/XMLTests.cpp
+)
+
+# Integration Test
+SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp
+)
+SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Scenes/IntegrationTestScene.cpp
 )
 
 # Global

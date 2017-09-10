@@ -3,6 +3,9 @@
 
 #include <memory>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+
 #include <EntityFramework/Entity.hpp>
 #include <EntityFramework/EntityRepresentation.hpp>
 
@@ -14,6 +17,9 @@ namespace asc {
 
 		void handleRegisterEntity(std::shared_ptr<Entity> _entity);
 		void handleUnregisterEntity(unsigned int _id);
+
+		void update(float _delta);
+		void draw(sf::RenderTarget& _target, sf::RenderStates _states) const;
 
 	private:
 		std::vector<std::unique_ptr<EntityRepresentation>> m_Representations;

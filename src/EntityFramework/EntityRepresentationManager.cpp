@@ -10,7 +10,7 @@ namespace asc {
 
 
 	void EntityRepresentationManager::handleRegisterEntity(std::shared_ptr<Entity> _entity) {
-		m_Representations.emplace_back(std::move(std::make_unique<EntityRepresentation>(_entity)));
+		m_Representations.emplace_back(_entity->createRepresentation());
 	}
 
 	void EntityRepresentationManager::handleUnregisterEntity(unsigned int _id) {
@@ -19,6 +19,16 @@ namespace asc {
 				m_Representations.erase(m_Representations.begin() + i);
 				return;
 			}
+		}
+	}
+	void EntityRepresentationManager::update(float _delta) {
+		for (auto& rep : m_Representations) {
+			rep->update(_delta);
+		}
+	}
+	void EntityRepresentationManager::draw(sf::RenderTarget& _target, sf::RenderStates _states) const {
+		for (const auto& rep : m_Representations) {
+			rep->draw(_target, _states);
 		}
 	}
 }

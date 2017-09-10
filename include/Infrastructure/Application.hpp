@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <Infrastructure/Camera2D.hpp>
 #include <Infrastructure/FontManager.hpp>
 #include <Infrastructure/SceneManager.hpp>
 #include <Infrastructure/TextureManager.hpp>
@@ -13,6 +14,19 @@ namespace asc {
 		static Application& getInstance(void) {
 			static Application app;
 			return app;
+		}
+
+		static Camera2D& getCamera(void) {
+			return Application::getInstance().m_Camera;
+		}
+		static FontManager& getFontManager(void) {
+			return Application::getInstance().m_FontManager;
+		}
+		static SceneManager& getSceneManager(void) {
+			return Application::getInstance().m_SceneManager;
+		}
+		static TextureManager& getTextureManager(void) {
+			return Application::getInstance().m_TextureManager;
 		}
 
 		void initialise(void);
@@ -36,10 +50,10 @@ namespace asc {
 		sf::Text m_FPSText;
 #endif
 
+		Camera2D m_Camera;
 		FontManager m_FontManager;
 		SceneManager m_SceneManager;
 		TextureManager m_TextureManager;
-
 	};
 }
 

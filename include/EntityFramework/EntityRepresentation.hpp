@@ -3,6 +3,8 @@
 
 #include <memory>
 
+#include <SFML/Graphics.hpp>
+
 #include <EntityFramework/Entity.hpp>
 
 namespace asc {
@@ -14,6 +16,9 @@ namespace asc {
 		virtual void HandleEntityEvent(const EntityEvent& _event);
 
 		const int EntityId;
+
+		virtual void update(float _delta) = 0;
+		virtual void draw(sf::RenderTarget& _target, sf::RenderStates _states) const = 0;
 
 	protected:
 		std::shared_ptr<Entity> m_Entity;

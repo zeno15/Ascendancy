@@ -5,6 +5,7 @@
 #include <EntityFramework/EntityEvent.hpp>
 
 namespace asc {
+	class EntityRepresentation;
 	class Entity {
 	public:
 		Entity(unsigned int _id);
@@ -15,7 +16,7 @@ namespace asc {
 		Signal<const EntityEvent&> OnEntityEvent;
 
 		virtual void update(float _delta) = 0;
-
+		virtual EntityRepresentation *createRepresentation(void) = 0;
 	private:
 	};
 }
