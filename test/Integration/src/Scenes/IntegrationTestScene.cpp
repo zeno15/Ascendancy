@@ -1,5 +1,7 @@
 #include <Scenes/IntegrationTestScene.hpp>
 
+#include <cmath>
+
 namespace asc {
 	IntegrationTestScene::IntegrationTestScene(void) 
 		: Scene("IntegrationTestScene") {
