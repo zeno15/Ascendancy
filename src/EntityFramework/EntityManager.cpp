@@ -1,5 +1,5 @@
 #include <EntityFramework/EntityManager.hpp>
-
+// TODO: Update controller and entity on update, and representation pre-render
 namespace asc {
 	EntityManager::EntityManager(void) {
 
@@ -22,9 +22,25 @@ namespace asc {
 		}
 	}
 	
-	void EntityManager::updateEntities(float _delta) {
+	void EntityManager::update(float _delta) {
+		for (unsigned int i = 0; i < m_Entities.size(); i++) {
+			m_Entities[i]->controllerUpdate(_delta);
+		}
 		for (unsigned int i = 0; i < m_Entities.size(); i++) {
 			m_Entities[i]->update(_delta);
 		}
+	}
+	bool EntityManager::handleEvent(const sf::Event& _event) {
+		for (unsigned int i = 0; i < m_Entities.size(); i++) {
+			if (m_Entities[i]->controllerHandleEvent(_event)) {
+				return true;
+			}
+		}
+		for (unsigned int i = 0; i < m_Entities.size(); i++) {
+			if (m_Entities[i]->handleEvent(_event)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

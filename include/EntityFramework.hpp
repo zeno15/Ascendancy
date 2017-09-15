@@ -2,6 +2,7 @@
 #define INCLUDED_ASCENDANCY_ENTITY_FRAMEWORK_HPP_
 
 #include <EntityFramework/Entity.hpp>
+#include <EntityFramework/EntityController.hpp>
 #include <EntityFramework/EntityEvent.hpp>
 #include <EntityFramework/EntityManager.hpp>
 #include <EntityFramework/EntityRepresentation.hpp>

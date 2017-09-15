@@ -21,7 +21,7 @@ namespace asc {
 	}
 
 	void IntegrationTestScene::update(float _delta) {
-		m_EntityManager.updateEntities(_delta);
+		m_EntityManager.update(_delta);
 		m_EntityRepresentationManager.update(_delta);
 	}
 
@@ -61,14 +61,14 @@ namespace asc {
 			}
 		}
 
+		if (m_EntityManager.handleEvent(_event)) {
+			return true;
+		}
+
 		return false;
 	}
 
 	void IntegrationTestScene::draw(sf::RenderTarget& _target, sf::RenderStates _states) const {
-		sf::CircleShape c(32.0f);
-		c.setOrigin(32.0f, 32.0f);
-		_target.draw(c, _states);
-
 		m_EntityRepresentationManager.draw(_target, _states);
 	}
 }

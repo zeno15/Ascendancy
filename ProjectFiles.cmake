@@ -1,6 +1,7 @@
 # Entity Framework
 SET(ENTITY_FRAMEWORK_HEADER_FILES ${ENTITY_FRAMEWORK_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/Entity.hpp
+	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityController.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityEvent.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityManager.hpp
 	${CMAKE_SOURCE_DIR}/include/EntityFramework/EntityRepresentation.hpp
@@ -11,6 +12,7 @@ SET(ENTITY_FRAMEWORK_HEADER_FILES ${ENTITY_FRAMEWORK_HEADER_FILES}
 )
 SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/Entity.cpp
+	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityController.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityManager.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentation.cpp
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityRepresentationManager.cpp
@@ -64,9 +66,25 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
 
 # Integration Test
 SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
-	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicKeyboardController.hpp
+
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Entities/BasicBallEntity.hpp
+	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Resources/BasicBallResource.hpp
+	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Representations/BasicBallRepresentation.hpp
+	 	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp	 
 )
 SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicKeyboardController.cpp
+
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Entities/BasicBallEntity.cpp
+	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Resources/BasicBallResource.cpp
+	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Representations/BasicBallRepresentation.cpp
+
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Scenes/IntegrationTestScene.cpp
 )
 

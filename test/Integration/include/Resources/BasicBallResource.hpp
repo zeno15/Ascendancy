@@ -1,0 +1,12 @@
+#ifndef INCLUDED_ASCENDANCY_INTEGRATION_RESOURCES_BASIC_BALL_RESOURCE_HPP_
+#define INCLUDED_ASCENDANCY_INTEGRATION_RESOURCES_BASIC_BALL_RESOURCE_HPP_
+
+#include <EntityFramework/EntityResource.hpp>
+
+namespace asc {
+	class BasicBallResource : public EntityResource {
+
+	};
+}
+
+#endif // INCLUDED_ASCENDANCY_INTEGRATION_RESOURCES_BASIC_BALL_RESOURCE_HPP_
