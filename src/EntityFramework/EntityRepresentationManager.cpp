@@ -9,7 +9,7 @@ namespace asc {
 	}
 
 
-	void EntityRepresentationManager::handleRegisterEntity(std::shared_ptr<Entity> _entity) {
+	void EntityRepresentationManager::handleRegisterEntity(Entity *_entity) {
 		m_Representations.emplace_back(_entity->createRepresentation());
 	}
 

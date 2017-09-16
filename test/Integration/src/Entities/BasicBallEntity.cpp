@@ -1,6 +1,9 @@
 #include <Entities/BasicBallEntity.hpp>
 
+#include <Controllers/BasicController.hpp>
 #include <Representations/BasicBallRepresentation.hpp>
+
+#include <iostream>
 
 namespace asc {
 	BasicBallEntity::BasicBallEntity(unsigned int _id, EntityController *_controller) :
@@ -11,7 +14,14 @@ namespace asc {
 
 	}
 
+	void BasicBallEntity::update(float _delta) {
+		// TODO: Abstract to BasicBallController
+		BasicController *controller = static_cast<BasicController *>(m_Controller);
+
+		m_Position += controller->getMovementDirection() * _delta * controller->getSpeed();
+	}
+
 	EntityRepresentation *BasicBallEntity::createRepresentation(void) {
-		return new BasicBallRepresentation(std::shared_ptr<Entity>(this));
+		return new BasicBallRepresentation(this);
 	}
 }

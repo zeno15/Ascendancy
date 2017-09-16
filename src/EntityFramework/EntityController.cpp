@@ -13,4 +13,8 @@ namespace asc {
 	bool EntityController::handleEvent(const sf::Event& _event) {
 		return false;
 	}
+
+	void EntityController::setEntity(Entity *_entity) {
+		m_Entity = _entity;
+	}
 }

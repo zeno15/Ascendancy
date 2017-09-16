@@ -9,7 +9,11 @@ namespace asc {
 		BasicBallEntity(unsigned int _id, EntityController *_controller);
 		~BasicBallEntity(void);
 
+		virtual void update(float _delta) override;
+
 		virtual EntityRepresentation *createRepresentation(void) override;
+		
+		sf::Vector2f m_Position;
 	};
 }
 

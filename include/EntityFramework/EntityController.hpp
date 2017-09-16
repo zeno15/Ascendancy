@@ -4,6 +4,7 @@
 #include <SFML/Window/Event.hpp>
 
 namespace asc {
+	class Entity;
 	class EntityController {
 	public:
 		EntityController(void);
@@ -11,6 +12,11 @@ namespace asc {
 
 		virtual void update(float _delta);
 		virtual bool handleEvent(const sf::Event& _event);
+
+		void setEntity(Entity *_entity);
+
+	protected:
+		Entity *m_Entity;
 	};
 }
 

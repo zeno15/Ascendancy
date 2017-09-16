@@ -10,7 +10,7 @@ namespace asc {
 
 	void EntityManager::addEntity(Entity *_entity) {
 		m_Entities.emplace_back(_entity);		
-		OnEntityAdded.invoke(std::shared_ptr<Entity>(_entity));
+		OnEntityAdded.invoke(_entity);
 	}
 	void EntityManager::removeEntity(unsigned int _id) {
 		for (unsigned int i = 0; i < m_Entities.size(); i++) {

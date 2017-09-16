@@ -6,7 +6,7 @@
 namespace asc {
 	class BasicBallRepresentation : public EntityRepresentation {
 	public:
-		BasicBallRepresentation(std::shared_ptr<Entity> _entity);
+		BasicBallRepresentation(Entity *_entity);
 		~BasicBallRepresentation(void);
 
 		virtual void update(float _delta) override;
