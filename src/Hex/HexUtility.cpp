@@ -4,7 +4,9 @@
 
 #include <cmath>
 
+#ifndef M_PI
 #define M_PI 3.14159265f
+#endif
 #define ROOT_THREE_OVER_TWO (sqrtf(3.0f) / 2.0f)
 
 namespace asc {
@@ -60,7 +62,7 @@ namespace asc {
 		const float angleRadians = M_PI / 180.0f * angleDegrees;
 
 		return sf::Vector2f(
-			_size * std::cosf(angleRadians) * 0.5f,
-			_size * std::sinf(angleRadians) * 0.5f);
+			_size * cosf(angleRadians) * 0.5f,
+			_size * sinf(angleRadians) * 0.5f);
 	}
 }
