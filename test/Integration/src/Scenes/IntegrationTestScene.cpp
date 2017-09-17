@@ -4,6 +4,7 @@
 
 #include <Entities/BasicBallEntity.hpp>
 #include <Controllers/BasicKeyboardController.hpp>
+#include <Controllers/BasicAIController.hpp>
 
 namespace asc {
 	IntegrationTestScene::IntegrationTestScene(void) 
@@ -19,6 +20,7 @@ namespace asc {
 			std::placeholders::_1));
 
 		m_EntityManager.addEntity(new BasicBallEntity(1, new BasicKeyboardController()));
+		m_EntityManager.addEntity(new BasicBallEntity(2, new BasicAIController()));
 	}
 	IntegrationTestScene::~IntegrationTestScene(void) {
 		m_EntityManager.OnEntityAdded.unregisterCallback(m_RemovedCallbackId);

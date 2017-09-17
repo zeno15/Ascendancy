@@ -66,6 +66,7 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
 
 # Integration Test
 SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicAIController.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicController.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicKeyboardController.hpp
 
@@ -78,6 +79,7 @@ SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp	 
 )
 SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicAIController.cpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicController.cpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicKeyboardController.cpp
 
