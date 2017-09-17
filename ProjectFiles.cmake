@@ -19,6 +19,18 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityResource.cpp
 )
 
+# Hex
+SET(HEX_HEADER_FILES ${HEX_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/Hex/Hex.hpp
+	${CMAKE_SOURCE_DIR}/include/Hex/HexUtility.hpp
+
+	${CMAKE_SOURCE_DIR}/include/Hex.hpp
+)
+SET(HEX_SOURCE_FILES ${HEX_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/Hex/Hex.cpp
+	${CMAKE_SOURCE_DIR}/src/Hex/HexUtility.cpp
+)
+
 # Infrastructure
 SET(INFRASTRUCURE_HEADER_FILES ${INFRASTRUCURE_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/Infrastructure/Camera2D.hpp
@@ -76,6 +88,7 @@ SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
 	 
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Representations/BasicBallRepresentation.hpp
 	 	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/HexTestScene.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp	 
 )
 SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
@@ -88,7 +101,8 @@ SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Resources/BasicBallResource.cpp
 	 
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Representations/BasicBallRepresentation.cpp
-
+	 
+	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Scenes/HexTestScene.cpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Scenes/IntegrationTestScene.cpp
 )
 

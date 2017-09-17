@@ -29,6 +29,9 @@ namespace asc {
 			return Application::getInstance().m_TextureManager;
 		}
 
+		static sf::Vector2f convertEventCoordsToGameCoords(const sf::Vector2i& _coords);
+		static sf::View& getGameView(void);
+
 		void initialise(void);
 		void start(void);
 
@@ -45,6 +48,8 @@ namespace asc {
 		bool m_IsInitialised;
 
 		sf::RenderWindow m_Window;
+		sf::View m_GameView;
+		sf::View m_UiView;
 
 #ifdef _DEBUG
 		sf::Text m_FPSText;

@@ -1,0 +1,6 @@
+#ifndef INCLUDED_ASCENDANCY_HEX_HPP_
+#define INCLUDED_ASCENDANCY_HEX_HPP_
+
+#include <Hex/Hex.hpp>
+
+#endif // INCLUDED_ASCENDANCY_HEX_HPP_

@@ -11,6 +11,15 @@ namespace asc {
 	}
 
 
+	sf::Vector2f Application::convertEventCoordsToGameCoords(const sf::Vector2i& _coords) {
+		Application& app = Application::getInstance();
+
+		return app.m_Window.mapPixelToCoords(_coords, app.m_GameView);
+	}
+	sf::View& Application::getGameView(void) {
+		return Application::getInstance().getGameView();
+	}
+
 	void Application::initialise(void) {
 		m_IsInitialised = true;
 
@@ -20,6 +29,8 @@ namespace asc {
 		m_Window.setVerticalSyncEnabled(true);
 		m_Camera.setCenterOffset(sf::Vector2f(m_Window.getSize()) / 2.0f);
 		m_Camera.setSize(sf::Vector2f(m_Window.getSize()));
+		m_GameView = sf::View(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(m_Window.getSize()));
+		m_UiView = sf::View(sf::Vector2f(m_Window.getSize()) / 2.0f, sf::Vector2f(m_Window.getSize()));
 
 #ifdef _DEBUG
 #ifdef ASC_WIN32
@@ -93,6 +104,7 @@ namespace asc {
 	void Application::update(float _delta) {
 		m_SceneManager.update(_delta);
 	}
+
 	void Application::handleEvent(const sf::Event& _event) {
 		if (m_SceneManager.handleEvent(_event)) {
 			return;
@@ -101,14 +113,15 @@ namespace asc {
 			m_Running = false;
 		}
 	}
+
 	void Application::render(void) {
 		m_Window.clear(sf::Color::Black);
 		
-		m_Window.setView(sf::View(m_Camera.getPosition(), m_Camera.getSize()));
+		m_Window.setView(m_GameView);
 
 		m_SceneManager.draw(m_Window, sf::RenderStates::Default);
 
-		m_Window.setView(sf::View(m_Camera.getSize() / 2.0f, m_Camera.getSize()));
+		m_Window.setView(m_UiView);
 
 #ifdef _DEBUG
 		m_Window.draw(m_FPSText, sf::RenderStates::Default);

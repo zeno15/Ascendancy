@@ -35,7 +35,7 @@ namespace asc {
 	}
 	Scene *SceneManager::popScene(void) {
 		auto popped = m_Scenes.back();
-		m_Scenes.erase(m_Scenes.begin() + m_Scenes.size());
+		m_Scenes.erase(m_Scenes.begin() + m_Scenes.size() - 1);
 		return popped;
 	}
 }
