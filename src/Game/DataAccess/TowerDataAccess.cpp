@@ -13,7 +13,7 @@ namespace asc {
 		
 		XML xml = XML();
 		if (!xml.loadFromString(_resource)) {
-			return false;
+			return nullptr;
 		}
 
 		XML::XMLNode *towerNode = xml.getRoot()->getChildNodeWithTag(TowerTag);
