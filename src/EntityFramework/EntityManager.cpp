@@ -21,6 +21,14 @@ namespace asc {
 			}
 		}
 	}
+	Entity *EntityManager::getEntity(unsigned int _id) {
+		for (Entity *e : m_Entities) {
+			if (e->Id == _id) {
+				return e;
+			}
+		}
+		return nullptr;
+	}
 	
 	void EntityManager::update(float _delta) {
 		for (unsigned int i = 0; i < m_Entities.size(); i++) {

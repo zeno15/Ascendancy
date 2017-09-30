@@ -5,6 +5,7 @@
 #include <EntityFramework/EntityController.hpp>
 #include <EntityFramework/EntityEvent.hpp>
 #include <EntityFramework/EntityManager.hpp>
+#include <EntityFramework/EntityResource.hpp>
 #include <EntityFramework/EntityRepresentation.hpp>
 #include <EntityFramework/EntityRepresentationManager.hpp>
 

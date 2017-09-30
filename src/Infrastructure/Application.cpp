@@ -17,7 +17,7 @@ namespace asc {
 		return app.m_Window.mapPixelToCoords(_coords, app.m_GameView);
 	}
 	sf::View& Application::getGameView(void) {
-		return Application::getInstance().getGameView();
+		return Application::getInstance().m_GameView;
 	}
 
 	void Application::initialise(void) {

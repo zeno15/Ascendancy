@@ -59,6 +59,14 @@ namespace asc {
 			////////////////////////////////////////////////////////////
 			bool create(const std::string& _data);
 
+			bool hasChildNodeWithTag(const std::string& _tag);
+			bool hasChildNodeWithAttribute(const std::string& _attribute);
+			bool hasAttributeWithName(const std::string& _name);
+
+			XMLNode *getChildNodeWithTag(const std::string& _tag);
+			XMLNode *getChildNodeWithAttribute(const std::string& _attribute);
+			std::string getAttribute(const std::string& _name);
+
 		public:
 			NodeType                    m_Type;										///<	Node type
 

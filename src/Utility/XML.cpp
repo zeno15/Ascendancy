@@ -140,6 +140,76 @@ namespace asc {
 		return true;
 	}
 
+
+	bool XML::XMLNode::hasChildNodeWithTag(const std::string& _tag) {
+		for (XML::XMLNode *node : m_Nodes) {
+			if (node->m_Tag == _tag || node->hasChildNodeWithTag(_tag)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool XML::XMLNode::hasChildNodeWithAttribute(const std::string& _attribute) {
+		if (hasAttributeWithName(_attribute)) {
+			return true;
+		}
+		for (XML::XMLNode *node : m_Nodes) {
+			if (node->hasChildNodeWithAttribute(_attribute)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+	bool XML::XMLNode::hasAttributeWithName(const std::string& _name) {
+		for (const auto& attributePair : m_AttributePairs) {
+			if (attributePair.first == _name) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	XML::XMLNode *XML::XMLNode::getChildNodeWithTag(const std::string& _tag) {
+		for (XML::XMLNode *node : m_Nodes) {
+			if (node->m_Tag == _tag) {
+				return node;
+			}
+		}
+		for (XML::XMLNode *node : m_Nodes) {
+			XML::XMLNode *childNode = node->getChildNodeWithTag(_tag);
+			if (childNode != nullptr) {
+				return childNode;
+			}
+		}
+
+		return nullptr;
+	}
+	XML::XMLNode *XML::XMLNode::getChildNodeWithAttribute(const std::string& _attribute) {
+		if (hasAttributeWithName(_attribute)) {
+			return this;
+		}
+		for (XML::XMLNode *node : m_Nodes) {
+			if (node->hasChildNodeWithAttribute(_attribute)) {
+				return node->getChildNodeWithAttribute(_attribute);
+			}
+		}
+
+		return nullptr;
+	}
+	std::string XML::XMLNode::getAttribute(const std::string& _name) {
+		for (const auto& attributePair : m_AttributePairs) {
+			if (attributePair.first == _name) {
+				return attributePair.second;
+			}
+		}
+
+		return std::string();
+	}
+
 	bool XML::loadFromFile(const std::string& _filename) {
 		std::ifstream file;
 		file.open(_filename);

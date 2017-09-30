@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Tower Id="BASICTOWER" Name="Basic Tower" Class="SingleTarget">
+  <Property Name="Range" Value="32.0" />
+  <Property Name="Arc" Value="360" />
+  <Property Name="FireRate" Value="1.0" />
+  <Property Name="Projectile" Value="BASICPROJECTILE" />
+</Tower>

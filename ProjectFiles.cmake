@@ -19,6 +19,58 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityResource.cpp
 )
 
+# Game
+SET(GAME_HEADER_FILES ${GAME_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/Game/Level.hpp
+	${CMAKE_SOURCE_DIR}/include/Game/Tile.hpp
+	
+	${CMAKE_SOURCE_DIR}/include/Game/Controllers/SingleTargetTowerController.hpp
+	
+	${CMAKE_SOURCE_DIR}/include/Game/DataAccess/TowerDataAccess.hpp
+	
+	${CMAKE_SOURCE_DIR}/include/Game/Entities/Tower.hpp
+
+	${CMAKE_SOURCE_DIR}/include/Game/Resources/SingleTargetTowerResource.hpp
+
+	${CMAKE_SOURCE_DIR}/include/Game/Representations/SingleTargetTowerRepresentation.hpp
+		
+	${CMAKE_SOURCE_DIR}/include/Game/Scenes/LevelScene.hpp
+
+	${CMAKE_SOURCE_DIR}/include/Game.hpp
+)
+
+SET(GAME_SOURCE_FILES ${GAME_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/Game/Level.cpp
+	${CMAKE_SOURCE_DIR}/src/Game/Tile.cpp
+	
+	${CMAKE_SOURCE_DIR}/src/Game/Controllers/SingleTargetTowerController.cpp
+	
+	${CMAKE_SOURCE_DIR}/src/Game/DataAccess/TowerDataAccess.cpp
+	
+	${CMAKE_SOURCE_DIR}/src/Game/Entities/Tower.cpp
+
+	${CMAKE_SOURCE_DIR}/src/Game/Resources/SingleTargetTowerResource.cpp
+
+	${CMAKE_SOURCE_DIR}/src/Game/Representations/SingleTargetTowerRepresentation.cpp
+
+	${CMAKE_SOURCE_DIR}/src/Game/Scenes/LevelScene.cpp
+)
+
+# GUI
+SET(GUI_HEADER_FILES ${GUI_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/GUI/Element.hpp
+	${CMAKE_SOURCE_DIR}/include/GUI/GuiDesktop.hpp
+	${CMAKE_SOURCE_DIR}/include/GUI/Panel.hpp
+
+	${CMAKE_SOURCE_DIR}/include/GUI.hpp
+)
+
+SET(GUI_SOURCE_FILES ${GUI_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/GUI/Element.cpp
+	${CMAKE_SOURCE_DIR}/src/GUI/GuiDesktop.cpp
+	${CMAKE_SOURCE_DIR}/src/GUI/Panel.cpp
+)
+
 # Hex
 SET(HEX_HEADER_FILES ${HEX_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/Hex/Hex.hpp
@@ -71,13 +123,15 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
     ${CMAKE_SOURCE_DIR}/test/EntityFramework/EntityRepresentationManagerTests.cpp
     ${CMAKE_SOURCE_DIR}/test/EntityFramework/EntityTests.cpp
 	
+    ${CMAKE_SOURCE_DIR}/test/Game/DataAccess/TowerDataAccessTests.cpp
+	
     ${CMAKE_SOURCE_DIR}/test/Utility/SignalTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/StringHelpersTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/XMLTests.cpp
 )
 
 # Integration Test
-SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
+SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicAIController.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicController.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Controllers/BasicKeyboardController.hpp
@@ -91,7 +145,7 @@ SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/HexTestScene.hpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/include/Scenes/IntegrationTestScene.hpp	 
 )
-SET(INTEGRATION_TEST_HEADER_FILES ${INTEGRATION_TEST_HEADER_FILES}
+SET(INTEGRATION_TEST_SOURCE_FILES ${INTEGRATION_TEST_SOURCE_FILES}
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicAIController.cpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicController.cpp
 	 ${CMAKE_SOURCE_DIR}/test/Integration/src/Controllers/BasicKeyboardController.cpp

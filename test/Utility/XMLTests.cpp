@@ -48,5 +48,31 @@ namespace UtilityTests {
 			REQUIRE(xml.getRoot()->m_Nodes[1]->m_Nodes[1]->m_AttributePairs[0].first == "Attribute2");
 			REQUIRE(xml.getRoot()->m_Nodes[1]->m_Nodes[1]->m_AttributePairs[0].second == "Value2");
 		}
+
+		TEST_CASE("Child with tag is identified and returned", "[XML]") {
+			const std::string desiredTag = "Child1";
+			asc::XML xml = asc::XML();
+			REQUIRE(xml.createTree(basicAttributes));
+
+			REQUIRE(xml.getRoot()->hasChildNodeWithTag(desiredTag));
+
+			asc::XML::XMLNode *child = xml.getRoot()->getChildNodeWithTag(desiredTag);
+
+			REQUIRE(desiredTag == child->m_Tag);
+		}
+
+		TEST_CASE("Child with attribute is identified and returned", "[XML]") {
+			const std::string desiredAttribute = "Attribute";
+			const std::string desiredAttributeValue = "Value";
+
+			asc::XML xml = asc::XML();
+			REQUIRE(xml.createTree(basicAttributes));
+
+			REQUIRE(xml.getRoot()->hasChildNodeWithAttribute(desiredAttribute));
+
+			asc::XML::XMLNode *child = xml.getRoot()->getChildNodeWithAttribute(desiredAttribute);
+
+			REQUIRE(desiredAttributeValue == child->getAttribute(desiredAttribute));
+		}
 	}
 }

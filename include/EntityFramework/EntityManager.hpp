@@ -19,6 +19,7 @@ namespace asc {
 
 		void addEntity(Entity *_entity);
 		void removeEntity(unsigned int _id);
+		Entity *getEntity(unsigned int _id);
 
 		void update(float _delta);
 		bool handleEvent(const sf::Event& _event);
