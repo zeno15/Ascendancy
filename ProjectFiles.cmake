@@ -19,47 +19,47 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/EntityFramework/EntityResource.cpp
 )
 
-# Game
-SET(GAME_HEADER_FILES ${GAME_HEADER_FILES}
-	${CMAKE_SOURCE_DIR}/include/Game/Level.hpp
-	${CMAKE_SOURCE_DIR}/include/Game/LevelInteraction.hpp
-	${CMAKE_SOURCE_DIR}/include/Game/Tile.hpp
+# Tower
+SET(TOWER_HEADER_FILES ${TOWER_HEADER_FILES}
+	${CMAKE_SOURCE_DIR}/include/Tower/Level.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/LevelInteraction.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Tile.hpp
 	
-	${CMAKE_SOURCE_DIR}/include/Game/Controllers/SingleTargetTowerController.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Controllers/SingleTargetTowerController.hpp
 	
-	${CMAKE_SOURCE_DIR}/include/Game/DataAccess/DataAccessManager.hpp
-	${CMAKE_SOURCE_DIR}/include/Game/DataAccess/TowerDataAccess.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/DataAccess/DataAccessManager.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/DataAccess/TowerDataAccess.hpp
 	
-	${CMAKE_SOURCE_DIR}/include/Game/Entities/SingleTargetTower.hpp
-	${CMAKE_SOURCE_DIR}/include/Game/Entities/Tower.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Entities/SingleTargetTower.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Entities/Tower.hpp
 
-	${CMAKE_SOURCE_DIR}/include/Game/Resources/SingleTargetTowerResource.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Resources/SingleTargetTowerResource.hpp
 
-	${CMAKE_SOURCE_DIR}/include/Game/Representations/SingleTargetTowerRepresentation.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Representations/SingleTargetTowerRepresentation.hpp
 		
-	${CMAKE_SOURCE_DIR}/include/Game/Scenes/LevelScene.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower/Scenes/LevelScene.hpp
 
-	${CMAKE_SOURCE_DIR}/include/Game.hpp
+	${CMAKE_SOURCE_DIR}/include/Tower.hpp
 )
 
-SET(GAME_SOURCE_FILES ${GAME_SOURCE_FILES}
-	${CMAKE_SOURCE_DIR}/src/Game/Level.cpp
-	${CMAKE_SOURCE_DIR}/src/Game/LevelInteraction.cpp
-	${CMAKE_SOURCE_DIR}/src/Game/Tile.cpp
+SET(TOWER_SOURCE_FILES ${TOWER_SOURCE_FILES}
+	${CMAKE_SOURCE_DIR}/src/Tower/Level.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/LevelInteraction.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Tile.cpp
 	
-	${CMAKE_SOURCE_DIR}/src/Game/Controllers/SingleTargetTowerController.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Controllers/SingleTargetTowerController.cpp
 	
-	${CMAKE_SOURCE_DIR}/src/Game/DataAccess/DataAccessManager.cpp
-	${CMAKE_SOURCE_DIR}/src/Game/DataAccess/TowerDataAccess.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/DataAccess/DataAccessManager.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/DataAccess/TowerDataAccess.cpp
 	
-	${CMAKE_SOURCE_DIR}/src/Game/Entities/SingleTargetTower.cpp
-	${CMAKE_SOURCE_DIR}/src/Game/Entities/Tower.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Entities/SingleTargetTower.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Entities/Tower.cpp
 
-	${CMAKE_SOURCE_DIR}/src/Game/Resources/SingleTargetTowerResource.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Resources/SingleTargetTowerResource.cpp
 
-	${CMAKE_SOURCE_DIR}/src/Game/Representations/SingleTargetTowerRepresentation.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Representations/SingleTargetTowerRepresentation.cpp
 
-	${CMAKE_SOURCE_DIR}/src/Game/Scenes/LevelScene.cpp
+	${CMAKE_SOURCE_DIR}/src/Tower/Scenes/LevelScene.cpp
 )
 
 # GUI
@@ -129,7 +129,7 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
     ${CMAKE_SOURCE_DIR}/test/EntityFramework/EntityRepresentationManagerTests.cpp
     ${CMAKE_SOURCE_DIR}/test/EntityFramework/EntityTests.cpp
 	
-    ${CMAKE_SOURCE_DIR}/test/Game/DataAccess/TowerDataAccessTests.cpp
+    ${CMAKE_SOURCE_DIR}/test/Tower/DataAccess/TowerDataAccessTests.cpp
 	
     ${CMAKE_SOURCE_DIR}/test/Utility/SignalTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/StringHelpersTests.cpp
