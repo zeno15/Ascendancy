@@ -9,6 +9,7 @@ namespace asc {
 
 		const int X;
 		const int Y;
+		static const float Size;
 
 		bool hasTower(void) const;
 		int getTowerId(void) const;

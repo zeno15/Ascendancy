@@ -1,6 +1,7 @@
 #include <Game/Tile.hpp>
 
 namespace asc {
+	const float Tile::Size = 64.0f;
 
 	Tile::Tile(int _x, int _y) :
 		X(_x),

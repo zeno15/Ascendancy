@@ -7,7 +7,7 @@ int main() {
 	asc::Application::getInstance().initialise();
 
 	asc::Level level;
-	level.createTestLevel(10, 10);
+	level.createTestLevel(16, 10);
 
 	asc::Application::getSceneManager().pushScene(new asc::LevelScene(level));
 	asc::Application::getInstance().start();

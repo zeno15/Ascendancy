@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <Game/DataAccess/DataAccessManager.hpp>
+
 #include <Infrastructure/Camera2D.hpp>
 #include <Infrastructure/FontManager.hpp>
 #include <Infrastructure/SceneManager.hpp>
@@ -27,6 +29,9 @@ namespace asc {
 		}
 		static TextureManager& getTextureManager(void) {
 			return Application::getInstance().m_TextureManager;
+		}
+		static DataAccessManager& getDataAccessManager(void) {
+			return Application::getInstance().m_DataAccessManager;
 		}
 
 		static sf::Vector2f convertEventCoordsToGameCoords(const sf::Vector2i& _coords);
@@ -59,6 +64,7 @@ namespace asc {
 		FontManager m_FontManager;
 		SceneManager m_SceneManager;
 		TextureManager m_TextureManager;
+		DataAccessManager m_DataAccessManager;
 	};
 }
 

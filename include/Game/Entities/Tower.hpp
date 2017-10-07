@@ -4,16 +4,18 @@
 #include <EntityFramework.hpp>
 
 namespace asc {
+	class Level;
 	class Tower : public Entity {
 	public:
-		Tower(unsigned int _id, EntityController *_controller, EntityResource *_resource);
+		Tower(unsigned int _id, EntityController *_controller, EntityResource *_resource, Level& _level);
 		~Tower(void);
 
-		virtual void update(float _delta) override;
+		virtual void update(float _delta) = 0;
 
 		virtual EntityRepresentation *createRepresentation(void) override;
 
-	private:
+	protected:
+		Level& m_Level;
 		EntityResource *m_EntityResource;
 	};
 }

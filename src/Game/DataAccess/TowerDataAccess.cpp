@@ -26,7 +26,6 @@ namespace asc {
 
 		if (towerClass == SingleTargetAttribute) {
 			return new SingleTargetTowerResource(xml);
-
 		}
 
 		return nullptr;

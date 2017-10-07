@@ -22,12 +22,15 @@ SET(ENTITY_FRAMEWORK_SOURCE_FILES ${ENTITY_FRAMEWORK_SOURCE_FILES}
 # Game
 SET(GAME_HEADER_FILES ${GAME_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/Game/Level.hpp
+	${CMAKE_SOURCE_DIR}/include/Game/LevelInteraction.hpp
 	${CMAKE_SOURCE_DIR}/include/Game/Tile.hpp
 	
 	${CMAKE_SOURCE_DIR}/include/Game/Controllers/SingleTargetTowerController.hpp
 	
+	${CMAKE_SOURCE_DIR}/include/Game/DataAccess/DataAccessManager.hpp
 	${CMAKE_SOURCE_DIR}/include/Game/DataAccess/TowerDataAccess.hpp
 	
+	${CMAKE_SOURCE_DIR}/include/Game/Entities/SingleTargetTower.hpp
 	${CMAKE_SOURCE_DIR}/include/Game/Entities/Tower.hpp
 
 	${CMAKE_SOURCE_DIR}/include/Game/Resources/SingleTargetTowerResource.hpp
@@ -41,12 +44,15 @@ SET(GAME_HEADER_FILES ${GAME_HEADER_FILES}
 
 SET(GAME_SOURCE_FILES ${GAME_SOURCE_FILES}
 	${CMAKE_SOURCE_DIR}/src/Game/Level.cpp
+	${CMAKE_SOURCE_DIR}/src/Game/LevelInteraction.cpp
 	${CMAKE_SOURCE_DIR}/src/Game/Tile.cpp
 	
 	${CMAKE_SOURCE_DIR}/src/Game/Controllers/SingleTargetTowerController.cpp
 	
+	${CMAKE_SOURCE_DIR}/src/Game/DataAccess/DataAccessManager.cpp
 	${CMAKE_SOURCE_DIR}/src/Game/DataAccess/TowerDataAccess.cpp
 	
+	${CMAKE_SOURCE_DIR}/src/Game/Entities/SingleTargetTower.cpp
 	${CMAKE_SOURCE_DIR}/src/Game/Entities/Tower.cpp
 
 	${CMAKE_SOURCE_DIR}/src/Game/Resources/SingleTargetTowerResource.cpp

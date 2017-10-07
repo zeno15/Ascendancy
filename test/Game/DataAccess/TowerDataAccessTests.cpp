@@ -15,22 +15,19 @@ namespace GameTests {
   <Property Name="Projectile" Value="BASICPROJECTILE" />
 </Tower>)";
 
-
-		TEST_CASE("If resource fails to be parsed as xml nullptr resource is returned", "[TowerDataAccess]") {
-			asc::EntityResource *resource = asc::TowerDataAccess::loadTowerResourceFromString("NOT XML");
-
-			REQUIRE(resource == nullptr);
-		}
-
-		TEST_CASE("If root level node is not tower nullptr resource is returned", "[TowerDataAccess]") {
-			const std::string creepResource = R"(
+		const std::string creepResource = R"(
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Creep Id="BASIC_CREEP" Name="Basic Creep">
   <Property Name="Health" Value="10" />
 </Creep>)";
 
-			asc::EntityResource *resource = asc::TowerDataAccess::loadTowerResourceFromString(creepResource);
+		TEST_CASE("If resource fails to be parsed as xml nullptr resource is returned", "[TowerDataAccess]") {
+			asc::EntityResource *resource = asc::TowerDataAccess::loadTowerResourceFromString("NOT XML");
+			REQUIRE(resource == nullptr);
+		}
 
+		TEST_CASE("If root level node is not tower nullptr resource is returned", "[TowerDataAccess]") {
+			asc::EntityResource *resource = asc::TowerDataAccess::loadTowerResourceFromString(creepResource);
 			REQUIRE(resource == nullptr);
 		}
 
@@ -43,6 +40,7 @@ namespace GameTests {
 			REQUIRE(nullptr != resource);
 
 			asc::SingleTargetTowerResource *singleTargetResource = static_cast<asc::SingleTargetTowerResource *>(resource);
+			REQUIRE(nullptr != singleTargetResource);
 		}
 	}
 }

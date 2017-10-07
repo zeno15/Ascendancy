@@ -50,7 +50,7 @@ namespace asc {
 
 			auto rounded = HexUtility::getQR(mousePosition.x, mousePosition.y);
 
-			selectedHex.setPosition(HexUtility::getCenter(static_cast<float>(rounded.x), static_cast<float>(rounded.y)));
+			selectedHex.setPosition(HexUtility::getCenter(static_cast<int>(rounded.x), static_cast<int>(rounded.y)));
 
 			isHexSelected = true;
 

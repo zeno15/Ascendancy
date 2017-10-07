@@ -30,6 +30,7 @@ namespace asc {
 		m_Camera.setCenterOffset(sf::Vector2f(m_Window.getSize()) / 2.0f);
 		m_Camera.setSize(sf::Vector2f(m_Window.getSize()));
 		m_GameView = sf::View(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(m_Window.getSize()));
+		m_GameView.move(sf::Vector2f(m_Window.getSize()) / 2.0f);
 		m_UiView = sf::View(sf::Vector2f(m_Window.getSize()) / 2.0f, sf::Vector2f(m_Window.getSize()));
 
 #ifdef _DEBUG
@@ -37,6 +38,9 @@ namespace asc {
 		m_FontManager.loadFont("C:/Windows/Fonts/arial.ttf", "DEBUG");
 #endif
 #endif
+		if (!m_DataAccessManager.loadFromFile("BasicTower", "data/towers/BasicTower.xml")) {
+			throw std::runtime_error("Failed to load data/towers/BasicTower.xml");
+		}
 
 	}
 
