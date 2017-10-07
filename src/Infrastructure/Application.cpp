@@ -38,9 +38,11 @@ namespace asc {
 		m_FontManager.loadFont("C:/Windows/Fonts/arial.ttf", "DEBUG");
 #endif
 #endif
+		/*
 		if (!m_DataAccessManager.loadFromFile("BasicTower", "data/towers/BasicTower.xml")) {
 			throw std::runtime_error("Failed to load data/towers/BasicTower.xml");
 		}
+		*/
 
 	}
 
