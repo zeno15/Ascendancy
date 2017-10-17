@@ -33,6 +33,8 @@ SET(TOWER_HEADER_FILES ${TOWER_HEADER_FILES}
 	${CMAKE_SOURCE_DIR}/include/Tower/Entities/SingleTargetTower.hpp
 	${CMAKE_SOURCE_DIR}/include/Tower/Entities/Tower.hpp
 
+	${CMAKE_SOURCE_DIR}/include/Tower/Factory/TowerFactory.hpp
+
 	${CMAKE_SOURCE_DIR}/include/Tower/Resources/SingleTargetTowerResource.hpp
 
 	${CMAKE_SOURCE_DIR}/include/Tower/Representations/SingleTargetTowerRepresentation.hpp
@@ -54,6 +56,8 @@ SET(TOWER_SOURCE_FILES ${TOWER_SOURCE_FILES}
 	
 	${CMAKE_SOURCE_DIR}/src/Tower/Entities/SingleTargetTower.cpp
 	${CMAKE_SOURCE_DIR}/src/Tower/Entities/Tower.cpp
+
+	${CMAKE_SOURCE_DIR}/src/Tower/Factory/TowerFactory.cpp
 
 	${CMAKE_SOURCE_DIR}/src/Tower/Resources/SingleTargetTowerResource.cpp
 
@@ -130,6 +134,8 @@ SET(TEST_SOURCE_FILES ${TEST_SOURCE_FILES}
     ${CMAKE_SOURCE_DIR}/test/EntityFramework/EntityTests.cpp
 	
     ${CMAKE_SOURCE_DIR}/test/Tower/DataAccess/TowerDataAccessTests.cpp
+	
+    ${CMAKE_SOURCE_DIR}/test/Tower/Factory/TowerFactoryTests.cpp
 	
     ${CMAKE_SOURCE_DIR}/test/Utility/SignalTests.cpp
     ${CMAKE_SOURCE_DIR}/test/Utility/StringHelpersTests.cpp
