@@ -32,7 +32,7 @@ namespace asc {
 			std::size_t closestDelimiterSize;
 			for (auto& delimeter : _splitStrings) {
 				auto pos = string.find(delimeter);
-				if (pos != std::string::npos && pos >= 0 && pos < closestDelimiter) {
+				if (pos != std::string::npos && pos < closestDelimiter) {
 					closestDelimiter = pos;
 					closestDelimiterSize = delimeter.size();
 				}

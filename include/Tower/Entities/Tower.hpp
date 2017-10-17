@@ -10,7 +10,7 @@ namespace tower {
 		Tower(unsigned int _id, asc::EntityController *_controller, asc::EntityResource *_resource, Level& _level);
 		~Tower(void);
 
-		virtual void update(float _delta) = 0;
+		virtual void update(float _delta) override = 0;
 
 		virtual asc::EntityRepresentation *createRepresentation(void) override;
 
